@@ -15,49 +15,51 @@ const MapWrapper = function(element, center, zoom){
 
 MapWrapper.prototype.bindEvents = function () {
   PubSub.subscribe('TimeLineView:date-clicked', (evt) => {
-    this.highlightMarker(evt.detail)
-    this.removeHighlight(evt.detail)
+    this.toggleHighLight(evt.detail)
   })
 };
 
-MapWrapper.prototype.addMarker = function(section){
+MapWrapper.prototype.addMarker = function(location){
   let el = document.createElement('div')
   el.className = 'marker'
   el.addEventListener('click', function(){
-    this.flyTo(section)
-    PubSub.publish('Marker:marker-clicked', section)
+    this.flyTo(location)
+    PubSub.publish('Marker:marker-clicked', location)
   }.bind(this))
 
+  let popup = new mapboxgl.Popup({ offset: 25 })
+  .setText(location.heading)
 
   let marker = new mapboxgl.Marker(el)
-  .setLngLat(section.coords)
+  .setLngLat(location.coords)
+  .setPopup(popup)
   .addTo(this.map)
+
   this.markers.push(marker)
+
 }
 
 MapWrapper.prototype.flyTo = function (location) {
   this.map.flyTo({center: location.coords, zoom: 9})
+  this.toggleHighLight(location)
 };
 
-MapWrapper.prototype.highlightMarker = function (section) {
+MapWrapper.prototype.toggleHighLight = function (location) {
   this.markers.forEach((marker) => {
-    if(marker._lngLat.lng === section.coords[0]){
+    let flag = marker._lngLat.lng === location.coords[0]
+    if(flag){
       marker._element.classList.add('marker-active')
-    }
-  })
-};
-
-MapWrapper.prototype.removeHighlight = function (section) {
-  this.markers.forEach((marker) => {
-    if(marker._lngLat.lng !== section.coords[0]){
+    } else {
       marker._element.classList.remove('marker-active')
     }
   })
-}
+};
 
 MapWrapper.prototype.recenter = function () {
   this.map.flyTo({center: [9.715165, 50.824481], zoom: 3.3})
 };
+
+
 
 
 

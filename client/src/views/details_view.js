@@ -13,12 +13,12 @@ DetailsView.prototype.bindEvents = function () {
   })
 };
 
-DetailsView.prototype.render = function (section) {
+DetailsView.prototype.render = function (location) {
   this.clearContent()
-  this.element.appendChild(this.createElement('h2', section.heading))
-  this.element.appendChild(this.createElement('h3', section.date))
-  this.element.appendChild(this.createElement('h3', section.location))
-  this.element.appendChild(this.createElement('p', section.info))
+  this.element.appendChild(this.createElement('h2', location.heading))
+  this.element.appendChild(this.createElement('h3', location.date))
+  this.element.appendChild(this.createElement('h3', location.location))
+  this.element.appendChild(this.createElement('p', location.info))
 };
 
 DetailsView.prototype.createElement = function (element, content) {
