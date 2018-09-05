@@ -15,17 +15,17 @@ const MapWrapper = function(element, center, zoom){
 
 MapWrapper.prototype.bindEvents = function () {
   PubSub.subscribe('TimeLineView:date-clicked', (evt) => {
-    this.toggleHighLight(evt.detail)
+    this.toggleHighlight(evt.detail)
   })
 };
 
 MapWrapper.prototype.addMarker = function(location){
   let el = document.createElement('div')
   el.className = 'marker'
-  el.addEventListener('click', function(){
+  el.addEventListener('click',() => {
     this.flyTo(location)
     PubSub.publish('Marker:marker-clicked', location)
-  }.bind(this))
+  })
 
   let popup = new mapboxgl.Popup({ offset: 25 })
   .setText(location.heading)
@@ -36,15 +36,14 @@ MapWrapper.prototype.addMarker = function(location){
   .addTo(this.map)
 
   this.markers.push(marker)
-
 }
 
 MapWrapper.prototype.flyTo = function (location) {
   this.map.flyTo({center: location.coords, zoom: 9})
-  this.toggleHighLight(location)
+  this.toggleHighlight(location)
 };
 
-MapWrapper.prototype.toggleHighLight = function (location) {
+MapWrapper.prototype.toggleHighlight = function (location) {
   this.markers.forEach((marker) => {
     let flag = marker._lngLat.lng === location.coords[0]
     if(flag){

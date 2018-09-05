@@ -1,3 +1,24 @@
+#timeline {
+  height: 10vh;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#timeline li{
+  display: inline-block;
+  margin-left: 20px
+}
+
+.scroll-arrow {
+    position: fixed;
+    color: #477C51;
+    border-radius: 4px;
+    border-left: 20px solid #477C51;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    animation: indicate 3.5s linear infinite;
+}
+
 #map {
   width: 47vw;
   height: 500px;
@@ -14,5 +35,10 @@
 }
 
 .marker-active {
-  background-color: red;
+  background-color: yellow;
+}
+
+@keyframes indicate {
+      0% { right: 15% }
+    100% { right: 0%; opacity: 0 }
 }

@@ -7,7 +7,7 @@ const MarkerRender = require('./views/marker_render.js')
 document.addEventListener('DOMContentLoaded', () => {
   map = new MapWrapper('map', [9.715165, 50.824481], 3.3);
   map.bindEvents()
-  
+
   const timeLine = new TimeLine()
   timeLine.getData()
 
@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeLineView = new TimeLineView(tl)
   timeLineView.bindEvents()
 
+
   const detailsContainer = document.querySelector('#details')
   const detailsView = new DetailsView(detailsContainer)
   detailsView.bindEvents()
+
 })
