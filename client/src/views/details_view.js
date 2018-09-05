@@ -8,6 +8,9 @@ DetailsView.prototype.bindEvents = function () {
   PubSub.subscribe('TimeLineView:date-clicked', (evt) => {
     this.render(evt.detail)
   })
+  PubSub.subscribe('Marker:marker-clicked', (evt) => {
+    this.render(evt.detail)
+  })
 };
 
 DetailsView.prototype.render = function (section) {

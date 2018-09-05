@@ -18,6 +18,7 @@ TimeLineView.prototype.render = function (content) {
     this.element.appendChild(li)
     li.addEventListener('click', function(){
       PubSub.publish('TimeLineView:date-clicked', this.data)
+      map.recenter()
     })
   })
 };

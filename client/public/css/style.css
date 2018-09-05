@@ -4,12 +4,15 @@
 }
 
 .marker {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: black;
   display: block;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  padding: 0;
+}
+
+.marker-active {
+  background-color: red;
 }
