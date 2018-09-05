@@ -12,17 +12,34 @@ const MapWrapper = function(element, center, zoom){
   })
 };
 
+MapWrapper.prototype.bindEvents = function () {
+  PubSub.subscribe('TimeLineView:date-clicked', (evt) => {
+    this.highlightMarker(evt.detail)
+  })
+};
+
 MapWrapper.prototype.addMarker = function(section){
-  let lat = section.latlng[0]
-  let lng = section.latlng[1]
-  let marker = L.marker([lat, lng])
+  let el = document.createElement('div')
+  el.className = 'marker'
+  el.addEventListener('click', function(){
+    this.flyTo(section)
+  }.bind(this))
+
+
+  let marker = new mapboxgl.Marker(el)
+  .setLngLat(section.coords)
   .addTo(this.map)
-  .on('click', this.markerClick);
-  marker.detail = section
 }
 
-MapWrapper.prototype.markerClick = function (e) {
-  PubSub.publish('MapWrapper:marker-clicked', e.target.detail)
+MapWrapper.prototype.flyTo = function (location) {
+  this.map.flyTo({center: location.coords, zoom: 9})
 };
+
+MapWrapper.prototype.highlightMarker = function (marker) {
+  console.log(marker);
+};
+
+
+
 
 module.exports = MapWrapper;

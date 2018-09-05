@@ -2,3 +2,14 @@
   width: 47vw;
   height: 500px;
 }
+
+.marker {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+}
