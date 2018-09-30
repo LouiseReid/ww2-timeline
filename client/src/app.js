@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   timeLineView.bindEvents()
 
 
+  if(tl.scrollLeft === (tl.scrollWidth - tl.offsetWidth)){
+    console.log('at left');
+  } 
+
+
   const detailsContainer = document.querySelector('#details')
   const detailsView = new DetailsView(detailsContainer)
   detailsView.bindEvents()

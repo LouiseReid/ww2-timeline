@@ -1,33 +1,81 @@
+body {
+  background-color: #839d72;
+  font-family: 'Linden Hill', serif;
+
+}
+
 #timeline {
-  height: 10vh;
+  display: flex;
+  align-items: flex-start;
+  height: 12vh;
   overflow-x: auto;
   white-space: nowrap;
+  margin: 10px 0;
+  background-color: #788b7f;
+  box-shadow: 0 0 3px 4px #788b7f;
 }
 
-#timeline li{
+#timeline li {
   display: inline-block;
-  margin-left: 20px
+  font-size: 25px;
+  transition: all 1s;
+  cursor: pointer;
 }
 
-.scroll-arrow {
+#timeline li:hover {
+  color: #cfc149;
+
+}
+
+#timeline li:nth-child(2n+1) {
+  align-self: flex-end;
+}
+
+#timeline li:not(:first-of-type) {
+  margin-left: 20px;
+}
+
+.scroll-arrow-right {
+  align-self: center;
     position: fixed;
-    color: #477C51;
+    color: #cfc149;
     border-radius: 4px;
-    border-left: 20px solid #477C51;
+    border-left: 20px solid #cfc149;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    animation: indicate 3.5s linear infinite;
+    animation: indicate-right 3.5s linear infinite;
+}
+
+.scroll-arrow-left {
+  align-self: center;
+    position: fixed;
+    color: #cfc149;
+    border-radius: 4px;
+    border-left: 20px solid #cfc149;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    animation: indicate-left 3.5s linear infinite;
+    transform: scaleX(-1);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#info-container {
+  display: flex;
 }
 
 #map {
   width: 47vw;
-  height: 500px;
+  height: 600px;
 }
 
 .marker {
-  width: 12px;
-  height: 12px;
-  background-color: black;
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
   display: block;
   border: none;
   border-radius: 50%;
@@ -35,10 +83,21 @@
 }
 
 .marker-active {
-  background-color: yellow;
+  background-color: #cfc149;
 }
 
-@keyframes indicate {
+#details {
+  width: 47vw;
+  height: 600px;
+  margin-left: 10px;
+}
+
+@keyframes indicate-right {
       0% { right: 15% }
     100% { right: 0%; opacity: 0 }
+}
+
+@keyframes indicate-left {
+      0% { left: 15% }
+    100% { left: 0%; opacity: 0 }
 }
