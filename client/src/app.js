@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       right.classList.remove('scroll-arrow-right-show')
     }
+
+    const left = document.querySelector('.scroll-arrow-left')
+
+    if(tl.scrollLeft){
+      left.classList.add('scroll-arrow-left-show')
+    } else {
+      left.classList.remove('scroll-arrow-left-show')
+    }
   }
 
 
