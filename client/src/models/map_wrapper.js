@@ -28,7 +28,7 @@ MapWrapper.prototype.addMarker = function(location){
   })
 
   let popup = new mapboxgl.Popup({ offset: 10 })
-  .setText(location.popup)
+  .setText(location.heading)
 
   let marker = new mapboxgl.Marker(el)
   .setLngLat(location.coords)

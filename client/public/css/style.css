@@ -35,7 +35,7 @@ body {
   margin-left: 20px;
 }
 
-.scroll-arrow-right {
+.scroll-arrow-right-show {
   align-self: center;
     position: fixed;
     color: #cfc149;
@@ -46,7 +46,7 @@ body {
     animation: indicate-right 3.5s linear infinite;
 }
 
-.scroll-arrow-left {
+.scroll-arrow-left-show {
   align-self: center;
     position: fixed;
     color: #cfc149;

@@ -71,6 +71,7 @@ db.timeline.insertMany([
     date: '22nd June 1941',
     location: 'Russian Front',
     coords: [32.104509, 54.800215],
-    heading: 'Hitler sent 3 million soldiers and 3,500 tanks into Russia. The Russians were taken by surprise as they had signed a treaty with Germany in 1939. Stalin immediately signed a mutual assistance treaty with Britain and launched an Eastern front battle that would claim 20 million casualties. The USA, which had been supplying arms to Britain under a ‘Lend-Lease’ agreement, offered similar aid to USSR.\n\nThe German offensive was launched by three army groups along a 1,800-mile front.  Germany attacked from the north into the Baltic states toward Leningrad (now St. Petersburg), from the right through southern Poland to the coasts of the Black Sea and the Sea of Azov and in the center heading towards Smolensk and Moscow.'
+    heading: 'Operation Barbarossa',
+    info: 'Hitler sent 3 million soldiers and 3,500 tanks into Russia. The Russians were taken by surprise as they had signed a treaty with Germany in 1939. Stalin immediately signed a mutual assistance treaty with Britain and launched an Eastern front battle that would claim 20 million casualties. The USA, which had been supplying arms to Britain under a ‘Lend-Lease’ agreement, offered similar aid to USSR.\n\nThe German offensive was launched by three army groups along a 1,800-mile front.  Germany attacked from the north into the Baltic states toward Leningrad (now St. Petersburg), from the right through southern Poland to the coasts of the Black Sea and the Sea of Azov and in the center heading towards Smolensk and Moscow.'
   },
 ])

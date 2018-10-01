@@ -18,10 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeLineView = new TimeLineView(tl)
   timeLineView.bindEvents()
 
+  const right = document.querySelector('.scroll-arrow-right')
+  right.classList.add('scroll-arrow-right-show')
 
-  if(tl.scrollLeft === (tl.scrollWidth - tl.offsetWidth)){
-    console.log('at left');
-  } 
+
+  tl.onscroll = function(){
+    const right = document.querySelector('.scroll-arrow-right')
+
+    if(tl.scrollLeft !== (tl.scrollWidth - tl.offsetWidth)){
+      right.classList.add('scroll-arrow-right-show')
+    } else {
+      right.classList.remove('scroll-arrow-right-show')
+    }
+  }
+
 
 
   const detailsContainer = document.querySelector('#details')
