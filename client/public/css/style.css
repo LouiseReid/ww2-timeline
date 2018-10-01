@@ -6,7 +6,8 @@
 
 #timeline li{
   display: inline-block;
-  margin-left: 20px
+  margin-left: 20px;
+  margin-top: 20px
 }
 
 .scroll-arrow {
@@ -19,10 +20,20 @@
     animation: indicate 3.5s linear infinite;
 }
 
+#info-container {
+  display: flex;
+}
+
 #map {
   width: 47vw;
-  height: 500px;
+  height: 600px;
 }
+
+#details {
+  width: 47vw;
+  padding: 10px
+}
+
 
 .marker {
   width: 12px;

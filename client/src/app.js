@@ -5,7 +5,7 @@ const MapWrapper = require('./models/map_wrapper.js')
 const MarkerRender = require('./views/marker_render.js')
 
 document.addEventListener('DOMContentLoaded', () => {
-  map = new MapWrapper('map', [9.715165, 50.824481], 3.3);
+  map = new MapWrapper('map', [13.282379, 50.824481], 3.3);
   map.bindEvents()
 
   const timeLine = new TimeLine()

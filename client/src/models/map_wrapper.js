@@ -27,8 +27,8 @@ MapWrapper.prototype.addMarker = function(location){
     PubSub.publish('Marker:marker-clicked', location)
   })
 
-  let popup = new mapboxgl.Popup({ offset: 25 })
-  .setText(location.heading)
+  let popup = new mapboxgl.Popup({ offset: 10 })
+  .setText(location.popup)
 
   let marker = new mapboxgl.Marker(el)
   .setLngLat(location.coords)
@@ -55,7 +55,7 @@ MapWrapper.prototype.toggleHighlight = function (location) {
 };
 
 MapWrapper.prototype.recenter = function () {
-  this.map.flyTo({center: [9.715165, 50.824481], zoom: 3.3})
+  this.map.flyTo({center: [13.282379, 50.824481], zoom: 3.3})
 };
 
 
