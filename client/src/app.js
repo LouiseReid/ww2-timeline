@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-
   const detailsContainer = document.querySelector('#details')
   const detailsView = new DetailsView(detailsContainer)
   detailsView.bindEvents()

@@ -1,7 +1,6 @@
 body {
   background-color: #839d72;
   font-family: 'Linden Hill', serif;
-
 }
 
 #timeline {
@@ -67,8 +66,15 @@ body {
   display: flex;
 }
 
-#info-container {
-  display: flex;
+#details {
+  overflow-y: scroll;
+}
+
+
+.location-img {
+  display: block;
+  width: 65%;
+  margin: 0 auto;
 }
 
 #map {
